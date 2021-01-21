@@ -1,0 +1,19 @@
+//  导入变量css文件
+
+@import "./common/variables"; // 等价于 @import './common/_variables.scss'
+
+//导入layout
+@import "./common/reboot"; // 等价于 @import './common/_reboot.scss'
+
+//导入mixin
+
+@import "./mixins/mixin";
+
+
+//导入button组件的样式
+@import "../components/Button/style";
+
+
+//导入menu组件的样式
+
+@import "../components/Menu/style";
