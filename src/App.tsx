@@ -1,10 +1,13 @@
 import React from "react";
-import Button, { ButtonSize, ButtonType } from "./components/Button/button";
+import Button from "./components/Button/button";
 
 //导航组件
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
+
+//导入icon组件
+import Icon from "./components/Icon";
 
 const App: React.FC = () => {
   const handlderClick = () => {
@@ -13,23 +16,24 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Button autoFocus onClick={handlderClick} className="fin-btn wwwww">
+        <Button
+          btnType="danger"
+          autoFocus
+          onClick={handlderClick}
+          className="fin-btn wwwww"
+        >
           点击
         </Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
+        <Button btnType="primary" size="lg">
           Large Primary
         </Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
+        <Button btnType="danger" size="sm">
           Small-Danger
         </Button>
-        <Button
-          btnType={ButtonType.Link}
-          href="https://www.baidu.com"
-          target="_blank"
-        >
+        <Button btnType="link" href="https://www.baidu.com" target="_blank">
           Link-Baidu
         </Button>
-        <Button disabled btnType={ButtonType.Link} href="https://www.baidu.com">
+        <Button disabled btnType="link" href="https://www.baidu.com">
           Link-Baidu
         </Button>
         <Button disabled>Disable Button</Button>
@@ -125,6 +129,9 @@ const App: React.FC = () => {
             <MenuItem>drop3</MenuItem>
           </SubMenu>
         </Menu>
+      </section>
+      <section>
+        <Icon>icon</Icon>
       </section>
     </div>
   );

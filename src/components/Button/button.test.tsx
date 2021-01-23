@@ -8,8 +8,8 @@ const defaultProps = {
   onDoubleClick: jest.fn(),
 };
 const testProps: ButtonProps = {
-  btnType: ButtonType.Primary,
-  size: ButtonSize.Large,
+  btnType: "primary",
+  size: "lg",
   className: "ckbtn",
 };
 const disabledProps = {
@@ -38,7 +38,7 @@ describe("测试Button组件", () => {
   });
   it("3.渲染一个链接并且有href", () => {
     const wrapper = render(
-      <Button btnType={ButtonType.Link} href="www.baidu.com" target="_blank">
+      <Button btnType="link" href="www.baidu.com" target="_blank">
         ck
       </Button>
     );

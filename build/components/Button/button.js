@@ -22,18 +22,6 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React from "react";
 import classNames from "classnames";
-export var ButtonSize;
-(function (ButtonSize) {
-    ButtonSize["Large"] = "lg";
-    ButtonSize["Small"] = "sm";
-})(ButtonSize || (ButtonSize = {}));
-export var ButtonType;
-(function (ButtonType) {
-    ButtonType["Primary"] = "primary";
-    ButtonType["Default"] = "default";
-    ButtonType["Danger"] = "danger";
-    ButtonType["Link"] = "link";
-})(ButtonType || (ButtonType = {}));
 /**
  * 定义一个Button的函数式组件
  * @param props
@@ -54,15 +42,15 @@ var Button = function (props) {
     var classes = classNames("btn", className, (_a = {},
         _a["btn-" + btnType] = btnType,
         _a["btn-" + size] = size,
-        _a.disabled = btnType === ButtonType.Link && disabled,
+        _a.disabled = btnType === "link" && disabled,
         _a));
-    if (btnType === ButtonType.Link && href) {
+    if (btnType === "link" && href) {
         return (React.createElement("a", __assign({ className: classes, href: href }, restProps), children));
     }
     return (React.createElement("button", __assign({ className: classes, disabled: disabled }, restProps), children));
 };
 Button.defaultProps = {
     disabled: false,
-    btnType: ButtonType.Default,
+    btnType: "default",
 };
 export default Button;

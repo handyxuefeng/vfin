@@ -1,7 +1,14 @@
 {
   "name": "vfin",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "typescript+react build Component Library",
+  "author": "hxf",
+  "license": "MIT",
+  "keywords": [
+    "TypeScript+React+Component",
+    "TypeScript+React UI"
+  ],
   "main": "build/index.js",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -56,14 +63,14 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.1.14",
-    "@storybook/addon-controls": "^6.1.14",
-    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-controls": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.1.14",
-    "@storybook/node-logger": "^6.1.14",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/node-logger": "^6.1.15",
     "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.14",
+    "@storybook/react": "^6.1.15",
     "@types/classnames": "^2.2.11",
     "react-docgen-typescript-loader": "^3.7.2",
     "rimraf": "^3.0.2"

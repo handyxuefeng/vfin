@@ -1,20 +1,22 @@
-// //导入Button组件
-// export { default as Button } from "./components/Button";
+// import React from "react";
+// import ReactDOM from "react-dom";
+// import "./styles/index.scss";
+// import App from "./App";
+// import reportWebVitals from "./reportWebVitals";
 
-// //导入Menu组件
-// export { default as Menu } from "./components/Menu";
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
+// reportWebVitals();
 
-import React from "react";
-import ReactDOM from "react-dom";
-import "./styles/index.scss";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+//导入Button组件
+export { default as Button } from "./components/Button";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+//导入Menu组件
+export { default as Menu } from "./components/Menu";
 
-reportWebVitals();
+//导入Icon组件
+export { default as Icon } from "./components/Icon";

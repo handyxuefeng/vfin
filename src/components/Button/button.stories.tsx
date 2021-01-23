@@ -45,7 +45,7 @@ const buttonTypeTemplate: Story<ButtonProps> = (props: ButtonProps) => {
       <Button {...props} onClick={action(`${props.children}`)}>
         {props.children}
       </Button>
-      <Button btnType={ButtonType.Danger} onClick={action(`${props.children}`)}>
+      <Button btnType="danger" onClick={action(`${props.children}`)}>
         {props.children}
       </Button>
     </>
@@ -55,7 +55,7 @@ const buttonTypeTemplate: Story<ButtonProps> = (props: ButtonProps) => {
 export let buttonWithTypeButton = buttonTypeTemplate.bind({});
 buttonWithTypeButton.args = {
   title: "不同类型的 Button",
-  btnType: ButtonType.Primary,
+  btnType: "primary",
   children: "不同类型的 Button",
 };
 
@@ -64,18 +64,10 @@ const buttonWithSizeTemplate: Story<ButtonProps> = (props: ButtonProps) => {
   console.log("props=", props);
   return (
     <>
-      <Button
-        {...props}
-        size={ButtonSize.Large}
-        onClick={action(`${ButtonSize.Large}`)}
-      >
+      <Button {...props} size="lg" onClick={action(`lg`)}>
         {props.description}
       </Button>
-      <Button
-        {...props}
-        size={ButtonSize.Small}
-        onClick={action(`${ButtonSize.Small}`)}
-      >
+      <Button {...props} size="sm" onClick={action(`sm`)}>
         {props.description}
       </Button>
     </>
@@ -85,9 +77,9 @@ const buttonWithSizeTemplate: Story<ButtonProps> = (props: ButtonProps) => {
 export let buttonWithSizeButton = buttonWithSizeTemplate.bind({});
 buttonWithSizeButton.args = {
   title: "不同尺寸的Button",
-  size: ButtonSize.Large,
+  size: "lg",
   description: "不同尺寸的Button",
-  btnType: ButtonType.Default,
+  btnType: "default",
 };
 
 // export const Secondary = Template.bind({});

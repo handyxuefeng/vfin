@@ -1,20 +1,22 @@
 import React from "react";
-import Button, { ButtonSize, ButtonType } from "./components/Button/button";
+import Button from "./components/Button/button";
 //导航组件
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
+//导入icon组件
+import Icon from "./components/Icon";
 var App = function () {
     var handlderClick = function () {
         alert("事件测试");
     };
     return (React.createElement("div", { className: "App" },
         React.createElement("header", { className: "App-header" },
-            React.createElement(Button, { autoFocus: true, onClick: handlderClick, className: "fin-btn wwwww" }, "\u70B9\u51FB"),
-            React.createElement(Button, { btnType: ButtonType.Primary, size: ButtonSize.Large }, "Large Primary"),
-            React.createElement(Button, { btnType: ButtonType.Danger, size: ButtonSize.Small }, "Small-Danger"),
-            React.createElement(Button, { btnType: ButtonType.Link, href: "https://www.baidu.com", target: "_blank" }, "Link-Baidu"),
-            React.createElement(Button, { disabled: true, btnType: ButtonType.Link, href: "https://www.baidu.com" }, "Link-Baidu"),
+            React.createElement(Button, { btnType: "danger", autoFocus: true, onClick: handlderClick, className: "fin-btn wwwww" }, "\u70B9\u51FB"),
+            React.createElement(Button, { btnType: "primary", size: "lg" }, "Large Primary"),
+            React.createElement(Button, { btnType: "danger", size: "sm" }, "Small-Danger"),
+            React.createElement(Button, { btnType: "link", href: "https://www.baidu.com", target: "_blank" }, "Link-Baidu"),
+            React.createElement(Button, { disabled: true, btnType: "link", href: "https://www.baidu.com" }, "Link-Baidu"),
             React.createElement(Button, { disabled: true }, "Disable Button")),
         React.createElement("section", null,
             React.createElement(Menu, { className: "user-define-class", defaultIndex: "0", onSelect: function (index) {
@@ -65,6 +67,8 @@ var App = function () {
                 React.createElement(SubMenu, { title: "dropdown" },
                     React.createElement(MenuItem, null, "drop1"),
                     React.createElement(MenuItem, null, "drop2"),
-                    React.createElement(MenuItem, null, "drop3"))))));
+                    React.createElement(MenuItem, null, "drop3")))),
+        React.createElement("section", null,
+            React.createElement(Icon, null, "icon"))));
 };
 export default App;
