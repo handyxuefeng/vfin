@@ -291,20 +291,54 @@ Email: (this IS public) handyxuefeng@163.com
 Logged in as handyxuefeng on https://registry.npmjs.org/.
 ```
 
-## 发布组件库到 npm
+## 发布组件库到 npm 之前，对 package.json 文件添加相关配置
 
 - package.json 文件的对应子项相关说明
 
 ```
 {
-  "name": "vfin", //组件库的名称
-  "version": "0.1.0",  //组件库的版本
+  "name": "vfin",//组件库的名称
+  "version": "0.1.1", //组件库的版本
   "private": false, //不是一个私有的库
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "description": "Typescript+React Component Library",
+  "author": "hxf",
+  "license": "MIT",
+  "keywords": [
+    "TypeScript+React+Component",
+    "TypeScript+React UI"
+  ],
+  "homepage": "https://github.com/handyxuefeng/vfin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/handyxuefeng/vfin"
+  },
+  "files": [ //发布到npm的目录
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "build": "npm run clean  && npm run build-ts && npm run build-css",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "storybook-docs": "start-storybook --docs",
+    "prepublish": "npm run build"
+  }
 }
 
+```
+
+- 在组件库项目所在的根目录运行如下命令
+
+```
+npm publish  //在https://npmjs.com/package/vfin  查看上传情况
 ```
 
 # 待做项目

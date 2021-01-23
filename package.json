@@ -1,17 +1,25 @@
 {
   "name": "vfin",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
-  "description": "typescript+react build Component Library",
+  "description": "Typescript+React Component Library",
   "author": "hxf",
   "license": "MIT",
   "keywords": [
     "TypeScript+React+Component",
     "TypeScript+React UI"
   ],
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "homepage": "https://github.com/handyxuefeng/vfin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/handyxuefeng/vfin"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -33,16 +41,17 @@
     "yarn": "^1.22.10"
   },
   "scripts": {
-    "clean": "rimraf ./build",
+    "clean": "rimraf ./dist",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "build": "npm run clean  && npm run build-ts && npm run build-css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "storybook-docs": "start-storybook --docs"
+    "storybook-docs": "start-storybook --docs",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": [
