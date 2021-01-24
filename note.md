@@ -103,18 +103,18 @@ npm run test
 
 # StoryBook 之旅: https://storybook.js.org/
 
-## 目前开发的痛点
+# 目前开发的痛点
 
 - create-react-app 入口文件不适合管理组件库
 - 缺少行为追踪和属性调试功能
 
-## 组件外媒开发工具应有的特点
+# 组件外媒开发工具应有的特点
 
 - 分开展示各个组件不同属性下的状态
 - 能追踪组件的行为并且有属性调试功能
 - 可以为组件自动生成文档和属性列表
 
-## storybook 安装
+# storybook 安装
 
 - 在项目的根目录下安装 storybook
 
@@ -122,7 +122,7 @@ npm run test
 npx -p @storybook/cli sb init
 ```
 
-## storybook 锦上添花事项
+# storybook 锦上添花事项
 
 - 给组件添加 mdx 说明文档 https://storybook.js.org/docs/react/writing-docs/mdx
 - 给组件添加装饰器 decorator https://storybook.js.org/docs/react/writing-stories/decorators
@@ -133,6 +133,13 @@ npm i -D @storybook/addon-info
 npm i --save @types/storybook__addon-info
 ```
 
+- 使用 storybook 生成静态文档页面
+
+```
+npm run build-storybook
+//动态build一个storybook-static 静态目录
+```
+
 # JavaScript 模块打包，所有的组件都要统一一个 package 里面
 
 - 创建组件库模块入口 ，修改入口文件 index.tsx
@@ -141,7 +148,7 @@ npm i --save @types/storybook__addon-info
 ```
 {
   "compilerOptions": {
-    "outDir": "build", //编译好的文件的输出目录
+    "outDir": "dist", //编译好的文件的输出目录
     "module": "esnext",
     "target": "es5",
     "declaration": true, //默认是生成 **.d.ts申明文件
@@ -185,7 +192,7 @@ npm install rimraf --save-dev
 
 ```
 {
-  "name": "finui",
+  "name": "vfin",
   "version": "0.1.0",
   "private": true,
   "main": "build/index.js",
@@ -391,7 +398,22 @@ npm i husky --save-dev
 
 ```
 
+# CI-持续继承
+
+- 频繁的将代码继承到主干分支
+- 快速发现错误
+- 防止分支偏离主干
+
+# CD-持续交付、持续部署
+
+- 频繁的将软件的新版本，交付给质量团队或者用户
+- 代码通过评审后，自动部署到生产环境
+
+# 使用 travis 测试和部署项目:https://travis-ci.com/
+
+- 在组件库项目的根目录下添加.travis.yml 配置文件，详情见https://docs.travis-ci.com/user/tutorial/
+- 登录之后，把 github 上面的项目同步到 travis
+
 # 待做项目
 
-- ci/cd
 - 使用 travis 自动运行测试
