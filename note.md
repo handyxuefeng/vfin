@@ -336,11 +336,59 @@ Logged in as handyxuefeng on https://registry.npmjs.org/.
 ```
 
 - 对 dependencies 的相关依赖移到 devDependencies 中
+- 把 react 和 react-dom 的依赖安装都移动到 devDependencies，这样也能避免组件库中 react 和 react-dom 版本和用户本地项目 react 和 react-dom 的副本问题
 
 - 在组件库项目所在的根目录运行如下命令
 
 ```
 npm publish  //在 https://npmjs.com/package/vfin  查看上传情况
+```
+
+- 发布成功后，运行 npm ivfin@0.1.2 可安装
+
+# 组件库发布到 npm 前的检查
+
+- 代码配置 ESlint 检查 npm run lint
+
+```
+  /*
+   在 package.json 文件中配置如下项,警告不解决的话，也会报错
+   eslint 代码检查配置文档:
+  */
+   "lint": "eslint --ext js,ts,tsx src --max-warnings 5",  //运行命令就是npm run lint
+```
+
+- 组件测试 npm run test 的优化:设置环境变量 CL，把所有组件库的测试案列都跑一遍
+
+```
+/**
+ 组件测试测试配置:https://create-react-app.dev/docs/running-tests/#continuous-integration
+*/
+
+"test": "react-scripts test"
+```
+
+- 增强 npm publish 前的事项检查
+
+```
+"prepublish": "npm run lint && npm run test:nowatch && npm run build"
+```
+
+# 使用 husky 做代码 commit 前的检查:https://github.com/typicode/husky
+
+- 安装 husky 并在 package.json 文件中配置 husky
+
+```
+npm i husky --save-dev
+//在package.json添加如下的配置
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test:nowatch"
+    }
+  },
+}
+
 ```
 
 # 待做项目

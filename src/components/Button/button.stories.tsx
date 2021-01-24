@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions"; //导入行为
 import { Story, Meta } from "@storybook/react/types-6-0";
-import Button, { ButtonProps, ButtonSize, ButtonType } from "./button";
+import Button, { ButtonProps } from "./button";
 
 /**!
  export interface BaseButtonProps {
