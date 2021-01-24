@@ -291,7 +291,7 @@ Email: (this IS public) handyxuefeng@163.com
 Logged in as handyxuefeng on https://registry.npmjs.org/.
 ```
 
-## 发布组件库到 npm 之前，对 package.json 文件添加相关配置
+## 发布组件库到 npm 之前，对 package.json 文件添加相关配置和对依赖进行优化操作
 
 - package.json 文件的对应子项相关说明
 
@@ -335,10 +335,12 @@ Logged in as handyxuefeng on https://registry.npmjs.org/.
 
 ```
 
+- 对 dependencies 的相关依赖移到 devDependencies 中
+
 - 在组件库项目所在的根目录运行如下命令
 
 ```
-npm publish  //在https://npmjs.com/package/vfin  查看上传情况
+npm publish  //在 https://npmjs.com/package/vfin  查看上传情况
 ```
 
 # 待做项目
