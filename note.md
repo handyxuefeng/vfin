@@ -413,7 +413,4 @@ npm i husky --save-dev
 
 - 在组件库项目的根目录下添加.travis.yml 配置文件，详情见https://docs.travis-ci.com/user/tutorial/
 - 登录之后，把 github 上面的项目同步到 travis
-
-# 待做项目
-
 - 使用 travis 自动运行测试
