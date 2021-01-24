@@ -411,6 +411,29 @@ npm i husky --save-dev
 
 # 使用 travis 测试和部署项目:https://travis-ci.com/
 
-- 在组件库项目的根目录下添加.travis.yml 配置文件，详情见https://docs.travis-ci.com/user/tutorial/
+- 在组件库项目的根目录下添加.travis.yml 文件，详情见https://docs.travis-ci.com/user/tutorial/
 - 登录之后，把 github 上面的项目同步到 travis
-- 使用 travis 自动运行测试
+- 使用 travis 自动运行测试 ：https://travis-ci.com/github/handyxuefeng/vfin/builds/214277250
+- 使用 travis 自动发布文档页面 ，将静态页面发布到https://pages.github.com站点上
+- 到https://github.com/settings/tokens去生成自己的github_token
+- 到https://travis-ci.com/github/handyxuefeng/vfin/settings 去添加已经生成好的 github_token
+
+```
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+env:
+  - CI=true
+script:
+  - npm run build-storybook
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token  //这个要到https://github.com/settings/tokens去生成
+  local_dir: storybook-static  //要把那个目录上传到pages.github.com
+  on:
+    branch: master
+```
