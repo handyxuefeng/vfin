@@ -1,0 +1,11 @@
+/**!
+ export interface BaseButtonProps {
+  type?: string;
+  className?: string;
+  disabled?: boolean;
+  size?: ButtonSize;
+  btnType?: ButtonType;
+  children: React.ReactNode;
+  href?: string;
+}
+*/
